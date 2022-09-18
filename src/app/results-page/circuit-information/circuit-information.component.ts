@@ -29,7 +29,7 @@ export class CircuitInformationComponent implements OnInit {
     })
     
   this.ResultServiceService.showdata.subscribe(season=>{
-    console.log(Object.keys(season[0].Results),season[0].Results);
+    
     this.showLoading=false;
     this.season =season;
     

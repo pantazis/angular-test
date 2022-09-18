@@ -16,7 +16,7 @@ export class ContactFormService {
     
 CreatePost(formData:any){
     this.formDAta=formData;
-    console.log(formData);
+    
 
     return this.http.post(this.database,formData)
 

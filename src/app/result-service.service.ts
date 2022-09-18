@@ -35,7 +35,7 @@ export class ResultServiceService {
     }))
   }
 
-  GetgetSingleYearData(){
+  getSingleYearData(){
     this.getdata.emit();
     return this.http.get(`http://ergast.com/api/f1/${this.yearSelected}/results.json?limit=400&offset=0`)
     .pipe(map((data:any) =>{

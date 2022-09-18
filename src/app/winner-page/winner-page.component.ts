@@ -33,13 +33,13 @@ export class WinnerPageComponent implements OnInit {
 
 
   onGetAvailableYears(){
-    console.log(1);
+    
     this.WinnerService.GetAvailableYears().subscribe(res => {
       
       
       
       this.availableYears= res; 
-      console.log(this.availableYears.length); 
+      
           
       if(this.availableYears.length > 0){
         this.loading=false;
@@ -49,7 +49,7 @@ export class WinnerPageComponent implements OnInit {
 
   getSingleYear(yearElement:number){
     this.WinnerService.yearSelected=this.availableYearsFiltered[+yearElement]; 
-    this.WinnerService.GetgetSingleYearData().subscribe( res=>{
+    this.WinnerService.getSingleYearData().subscribe( res=>{
    
     });
     this.availableYearsFiltered=[];

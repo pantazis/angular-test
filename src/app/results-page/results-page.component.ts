@@ -34,7 +34,7 @@ export class ResultsPageComponent implements OnInit {
 
   getSingleYear(yearElement:number){
     this.ResultServiceService.yearSelected=this.availableYears[+yearElement]; 
-    this.ResultServiceService.GetgetSingleYearData().subscribe( res=>{
+    this.ResultServiceService.getSingleYearData().subscribe( res=>{
    
     });
     

@@ -29,9 +29,8 @@ export class DriverStandingsComponent implements OnInit {
 
     })
     
-  this.WinnerService.showdata.subscribe(season=>{
-    //console.log(Object.keys(season.StandingsLists[0].DriverStandings[0].Constructors[0]));
-    console.log(season.StandingsLists[0].DriverStandings);
+  this.WinnerService.showdata.subscribe(season=>{   
+    
     this.showLoading=false;
    
     this.season =season.StandingsLists[0].DriverStandings;

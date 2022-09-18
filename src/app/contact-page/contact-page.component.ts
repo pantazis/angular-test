@@ -47,13 +47,13 @@ export class ContactPageComponent implements OnInit {
   }
 
   sendForm(){
-    console.log(this.form.value);
+    
     this.ContactFormService.CreatePost(this.form.value).subscribe(
       (data)=>{      
       this.mailSend = true;
     },(err) =>{
       this.mailSend = true;
-      console.log(1);
+    
 
     }
     );
