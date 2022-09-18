@@ -79,8 +79,7 @@ export class WinnerPageComponent implements OnInit {
   }
 
   OnDestroy(){
-  this.availableYearsFiltered=[];
-  this.availableYears=[];
+ 
 
   }
 
