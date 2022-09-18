@@ -25,6 +25,7 @@ export class WinnerPageComponent implements OnInit {
   ngOnInit(): void {
     this.onGetAvailableYears()
     this.filterChanged();
+    
   }
   onDropdownClick(){
     this.openDropdown = !this.openDropdown;
@@ -32,10 +33,13 @@ export class WinnerPageComponent implements OnInit {
 
 
   onGetAvailableYears(){
+    console.log(1);
     this.WinnerService.GetAvailableYears().subscribe(res => {
       
       
-      this.availableYears= res;  
+      
+      this.availableYears= res; 
+      console.log(this.availableYears.length); 
           
       if(this.availableYears.length > 0){
         this.loading=false;
@@ -56,10 +60,11 @@ export class WinnerPageComponent implements OnInit {
   }
 
   filterChanged(){
+    
     this.availableYearsFiltered=[];
     this.availableYearsFiltered=this.availableYears.filter(year=>{
      
-      console.log(year.substring(0,this.filter.year.length).includes(this.filter.year));
+      
       if(year.substring(0,this.filter.year.length).includes(this.filter.year)&&this.filter.year.length>0){
         return year;
       }
@@ -68,9 +73,15 @@ export class WinnerPageComponent implements OnInit {
     });
     
 
+    
+
 
   }
 
-  OnDestroy(){}
+  OnDestroy(){
+  this.availableYearsFiltered=[];
+  this.availableYears=[];
+
+  }
 
 }

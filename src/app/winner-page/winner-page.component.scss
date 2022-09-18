@@ -3,7 +3,9 @@
 }
 
 .child {
-    position: absolute;
-    top: 0;
-    background: #fff;
+    width: 100%;
+    max-width: 170px;
+    border: 1px solid #747272;
+    max-height: 300px;
+    overflow: auto;
 }

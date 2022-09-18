@@ -1,13 +1,15 @@
  
 
 <div class="filter">    
-      <input type="text" placeholder="Type"  [(ngModel)]="filter.year"   (ngModelChange)="filterChanged() "  >
+      <input type="text" placeholder="Type year"  [(ngModel)]="filter.year"   (ngModelChange)="filterChanged() "  >
       <div class="parent">
-        <div class="child">
-            <div  *ngIf="loading">          
+        <div  *ngIf="loading">
+            <div class="child" >          
                     <a >loading...</a>                        
             </div>
-            <div  *ngIf="!loading">
+        </div>
+        <div class="child" *ngIf="!loading && availableYearsFiltered.length > 0">    
+            <div  >
                     <div *ngFor="let item of availableYearsFiltered;let i = index" (click)="getSingleYear(i)" ><a >{{item}}</a></div>       
             </div>
         </div>

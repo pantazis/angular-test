@@ -24,6 +24,7 @@ export class WinnerService {
 
 
   GetAvailableYears(){
+    this.sesionData=[];
     return this.http.get("http://ergast.com/api/f1/seasons.json?limit=200&offset=0")
     .pipe(map((data:any) =>{
       this.seasons = data["MRData"].SeasonTable.Seasons
