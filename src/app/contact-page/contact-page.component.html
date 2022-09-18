@@ -1,0 +1,29 @@
+<form [formGroup]="form" (ngSubmit)="sendForm()" >
+    <div class="form-group" [ngClass]="{'invalid' : mail && mail.invalid && mail.touched}">
+        <label for="mail">Email</label>
+        <input type="text" class="form-control" id="mail"  placeholder="mail" formControlName="mail">
+        <small *ngIf="mail && mail.invalid && mail.touched" id="emailHelp" class="form-text text-muted">Email is not valid or empty</small>
+    </div>
+    <div class="form-group" [ngClass]="{'invalid' : subject && subject.invalid && subject.touched}">
+      <label for="subject">Subject</label>
+      <input type="text" class="form-control" id="subject"  placeholder="Subject" formControlName="subject">
+      <small *ngIf="subject && subject.invalid && subject.touched" id="emailHelp" class="form-text text-muted">Subject is required</small>
+    </div>
+    <div class="form-group" [ngClass]="{'invalid' : message && message.invalid && message.touched}">
+        <label for="exampleFormControlTextarea1">Example textarea</label>
+        <textarea   class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="message"></textarea>
+        <small *ngIf="message && message.invalid && message.touched" class="form-text text-muted">Message is required</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Example multiple select</label>
+        <select  multiple="" class="form-control" id="exampleFormControlSelect2" formControlName="driversName">
+        <ng-container *ngFor="let driver of driversArr">
+          <option value="{{driver}}">{{driver}}</option>       
+        </ng-container>
+        </select>
+        
+      </div>
+    
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary" >Submit</button><br>   
+    <small *ngIf="mailSend" class="form-text text-muted"> Message Send to {{database}}</small>
+  </form>

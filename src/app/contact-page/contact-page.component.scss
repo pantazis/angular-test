@@ -1,0 +1,13 @@
+.invalid{
+input,textarea,select{
+
+    &.form-control{
+        border-color: red;
+    }
+  
+
+}
+.text-muted{
+    color:red!important;
+}
+}

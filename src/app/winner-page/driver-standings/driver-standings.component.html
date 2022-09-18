@@ -1,0 +1,15 @@
+<div *ngIf="showSelectYear" >Select Year</div>
+<div *ngIf="showLoading" >Loading...</div>
+<ng-container *ngIf="!showSelectYear && !showLoading">
+    {{activeYear}}
+    <div *ngFor="let driver of season" >
+
+     
+        Position {{driver.position}}
+        Points {{driver.points}}
+        Drive Name {{driver.Driver.givenName}} {{driver.Driver.familyName}}
+        Constructor Name  {{driver.Constructors[0].name}}
+        Constructor Nationality  {{driver.Constructors[0].nationality}}
+       
+    </div>
+</ng-container>
